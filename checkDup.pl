@@ -14,6 +14,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # Author: Jackson Lopes <jacksonlopes@gmail.com>
+# Personal site: https://jacksonlopes.github.io
+# Source: https://jacksonlopes.github.io
 
 use Digest::MD5;
 use Getopt::Std;
@@ -127,7 +129,7 @@ sub showListFilesDup() {
         print "(Preserved file: $hashFileDup{$key}[$i])\n" if $options{'g'} and $i == 0;
         print "====> $hashFileDup{$key}[$i]\n";
         print $fh "echo Removing \"$hashFileDup{$key}[$i]\" ...\n" if $options{'g'} and $i > 0;
-        print $fh "/usr/bin/rm -f \"$hashFileDup{$key}[$i]\"\n" if $options{'g'} and $i > 0;
+        print $fh "/bin/rm -f \"$hashFileDup{$key}[$i]\"\n" if $options{'g'} and $i > 0;
       }
     }
     print $fh "echo END\n" if $options{'g'};
